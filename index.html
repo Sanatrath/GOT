@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1024, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Game of Thrones</title>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<script src="src/jquery-1.8.3.min.js"></script>
+<script src="src/e-smart-zoom-jquery.min.js"></script>
+<script src="assets/owl.carousel.min.js"></script>
+
+<link rel="stylesheet" href="assets/owl.carousel.css" type="text/css" />
+
+<!--[if lt IE 9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+<script>
+			$(document).ready(function() {
+				$('#imageFullScreen').smartZoom({'maxScale':5,'containerClass':'zoomableContainer'});
+				
+				$('#zoomInButton,#zoomOutButton').bind("click", zoomButtonClickHandler);
+				
+				function zoomButtonClickHandler(e){
+			    	var scaleToAdd = 1.5;
+					if(e.target.id == 'zoomOutButton')
+						scaleToAdd = -scaleToAdd;
+					$('#imageFullScreen').smartZoom('zoom', scaleToAdd);
+			    }
+				
+				
+			});
+			$(window).load(function(){
+				$('#imageFullScreen').smartZoom('zoom', 2, {'x':100,'y':300},300);
+				
+				var owl = $("#thumbnails");
+ 
+				  owl.owlCarousel({
+				      items : 3.2, 
+				      itemsDesktop : false, 
+				      itemsDesktopSmall : false,
+				      itemsTablet: false, 
+				      itemsMobile : false,
+				      rewindNav : false,
+				      responsive: false,
+				      
+				      
+				  });
+				 
+				  
+				  $(".next").click(function(){
+				    owl.trigger('owl.next');
+				  })
+				  $(".prev").click(function(){
+				    owl.trigger('owl.prev');
+				  })
+					
+					var $child = $('#thumbnails .item').click(function () {
+					    var index = $child.index(this);
+					    $(".item").removeClass('clicked');
+					    $(this).addClass('clicked');
+					    owl.trigger('owl.goTo',index);
+					    $("#moments img").animate({marginTop:'283px', opacity:0},300);
+					});
+					
+					$(".circle").delay(300).show();
+
+				/*
+$('#thumbnails .item').on('click', function(event){
+					var $this = $(this);
+					var index = $(this).index();
+					console.log(index);
+				    $this.css('background','#7fc242').addClass('clicked');
+				    owl.trigger('owl.goTo',index);
+				    
+				 });
+*/
+				$(".moment").click(function(){
+				    $("#moments img").animate({marginTop:'-14px', opacity:1},300);
+				  })
+		});
+		</script>
+</head>
+<body>
+<div id="app">
+	<div class="name"><h1>Scene Name</h1></div>
+	<div id="pageContent">
+		<div id="imgContainer"> 
+			 
+<div id="imageFullScreen">
+			 	<img class="mapper" src="assets/map.jpg" alt="map"/>
+			 	<div id="big-circle" class="circle big">
+				    <div class="circle one stark"></div>
+				    <div class="circle two lannister"></div>
+				    <div class="circle three stark"></div>
+			    </div>
+			 </div>
+
+			<!--  <img id="imageFullScreen" src="assets/map.jpg" alt="map"/> -->
+			 	
+			 </div>
+		</div>
+		
+		
+		<div id="moments">
+			<img src="assets/iron_throne_card.png" />
+	</div>
+	</div>
+
+	<div id="positionButtonDiv">
+		<img id="zoomInButton" class="zoomButton" src="assets/zoomin.png" title="zoom in" alt="zoom in" /> 
+		<img id="zoomOutButton" class="zoomButton" src="assets/zoomout.png" title="zoom out" alt="zoom out" />
+	</div>
+	
+	<div id="scenes">
+	<div id="thumbnails" class="owl-carousel owl-theme">
+	  <div>&nbsp</div>
+	  <div>&nbsp</div>
+	  <div class="item orange"><h1>1</h1></div>
+	  <div class="item darkCyan"><h1>2</h1></div>
+	  <div class="item yellow"><h1>3</h1></div>
+	  <div class="item forestGreen"><h1>4</h1></div>
+	  <div class="item dodgerBlue moment"><h1>5</h1></div>
+	  <div class="item skyBlue"><h1>6</h1></div>
+	  <div class="item zombieGreen"><h1>7</h1></div>
+	  <div class="item violet"><h1>8</h1></div>
+	  <div class="item steelGray"><h1>9</h1></div>
+	  <div class="item dodgerBlue"><h1>10</h1></div>
+	  <div class="item darkCyan"><h1>11</h1></div>
+	  <div class="item zombieGreen"><h1>12</h1></div>
+	  <div class="item orange"><h1>13</h1></div>
+	</div>
+	 
+	
+	  <a class="move-left btn prev">
+		  <img src="assets/slider-left.png" />
+	  </a>
+	  <a class="move-right btn next"> 
+		  <img src="assets/slider-right.png" />
+		  
+		  
+	  </a>
+	</div>
+	
+
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title></title>
+<style type="text/css">
+/*<![CDATA[*/
+
+#tst {
+  position:absolute;overflow:hidden;left:0px;top:0px;width:1024px;height:768px;border:none;
+}
+
+.img {
+  position:absolute;left:-600px;top:-100px;width:2800px;height:3076px;border:solid red 1px;
+}
+
+.img IMG {
+  float:left;
+}
+
+#nav {
+  position:absolute;z-Index:2;left:0px;top:0px;width:175px;height:192px;border:solid #333 1px;background-Image:url(http://i.cdn.hbo.com/custom-assets/enrichments/series/game-of-thrones/images/map-navigator.jpg);
+}
+
+.nav {
+  border:solid red 1px;
+}
+
+.m1 {
+  position:absolute;width:80px;height:20px;border:solid red 1px;background-Color:#FFFFCC;
+}
+
+.m2 {
+  position:absolute;width:80px;height:20px;border:solid red 1px;background-Color:#FF3366;
+}
+
+.pop {
+  position:absolute;visibility:hidden;width:200px;height:120px;border:solid red 1px;background-Color:#FFFFCC;
+}
+
+/*]]>*/
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+ <div id="tst" >
+  <div class="img" >
+   <img src="http://i.cdn.hbo.com/custom-assets/enrichments/series/game-of-thrones/images/map/x2-images-3-1.png" />
+   <img src="http://i.cdn.hbo.com/custom-assets/enrichments/series/game-of-thrones/images/map/x2-images-3-2.png"/>
+   <img src="http://i.cdn.hbo.com/custom-assets/enrichments/series/game-of-thrones/images/map/x2-images-3-3.png" />
+   <img src="http://i.cdn.hbo.com/custom-assets/enrichments/series/game-of-thrones/images/map/x2-images-3-4.png" />
+   <div id="pop1" class="pop" >Pop 1</div>
+   <div id="pop2" class="pop" >Pop 2</div>
+  </div>
+  <div id="nav" >
+   <div class="nav" ></div>
+  </div>
+ </div>
+
+<script src="./src/pan.js"></script>
+
+
+</body>
+
+</html>
